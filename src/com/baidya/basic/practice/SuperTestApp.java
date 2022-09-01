@@ -1,4 +1,4 @@
-package com.baidya.basic.practise;
+package com.baidya.basic.practice;
 
 class A{
 	int x;

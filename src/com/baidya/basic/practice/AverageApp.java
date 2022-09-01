@@ -1,4 +1,4 @@
-package com.baidya.basic.practise;
+package com.baidya.basic.practice;
 // T will be upper bound to all classes that implements Comparable & hence the compareTo method is available for comparison. 
 class Search<T extends Comparable<T>>{
 	

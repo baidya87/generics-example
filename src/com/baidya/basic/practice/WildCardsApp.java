@@ -1,5 +1,4 @@
-package com.baidya.basic.practise;
-
+package com.baidya.basic.practice;
 // using wild cards to understand extends keyword
 
 class TwoDim{
