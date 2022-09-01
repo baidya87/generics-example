@@ -53,6 +53,26 @@ public class FeatureUtility {
 		System.out.printf("Min value: %s\n", min);		
 	}
 	
+	
+	public static <T extends Comparable<T>> void printCount(List<T> values, T value) {
+		int count = 0;
+		for(T val : values) {
+			if(val.compareTo(value)==0) count++; 
+		}
+		System.out.printf("Total count of %s: %d\n", value, count);
+	}
+	
+	public static <T extends Comparable<T>, V extends T> boolean search(T[] values, V value) {
+		boolean found = false;
+		for(T val : values) {
+			if(val.compareTo(value)==0) {
+				found = true;
+				break;
+			}
+		}
+		return found;
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Printing maximum values :");
 		printMax(Arrays.asList(21, 12, 4, 5, 87, 23, 24, 5, 76, 98));
@@ -65,5 +85,14 @@ public class FeatureUtility {
 		printMin(Arrays.asList("dog", "cat", "foo", "bar"));
 		printMin(Arrays.asList('a', 'b', 'h', 'l', 'e', 'k'));
 		printMin(Arrays.asList(new Foo(3), new Foo(6), new Foo(2)));
+		
+		System.out.println("Finding count :");
+		printCount(Arrays.asList(21, 12, 4, 7, 7, 5, 87, 23, 24, 5, 76, 98), 7);
+		printCount(Arrays.asList(21.4, 12.2, 32.12, 12.0, 34.0), 12.2);
+		printCount(Arrays.asList("dog", "cat", "foo", "bar", "foo"), "foo");
+		
+		System.out.println("Searching ....");
+		boolean res = search(new Integer[] {4, 5, 2, 1, 9}, 25);
+		System.out.println(res);
 	}
 }
